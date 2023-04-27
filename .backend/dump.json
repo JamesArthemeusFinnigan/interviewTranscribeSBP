@@ -1,0 +1,77 @@
+{
+    "text": " This is a test. And you know, this is another test. Do we need a last test maybe? Is that it?",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 2.0,
+            "text": " This is a test.",
+            "tokens": [
+                50364,
+                639,
+                307,
+                257,
+                1500,
+                13,
+                50464
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.29652829603715375,
+            "compression_ratio": 1.1204819277108433,
+            "no_speech_prob": 0.012907949276268482
+        },
+        {
+            "id": 1,
+            "seek": 0,
+            "start": 4.0,
+            "end": 7.0,
+            "text": " And you know, this is another test.",
+            "tokens": [
+                50564,
+                400,
+                291,
+                458,
+                11,
+                341,
+                307,
+                1071,
+                1500,
+                13,
+                50714
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.29652829603715375,
+            "compression_ratio": 1.1204819277108433,
+            "no_speech_prob": 0.012907949276268482
+        },
+        {
+            "id": 2,
+            "seek": 0,
+            "start": 8.0,
+            "end": 11.0,
+            "text": " Do we need a last test maybe? Is that it?",
+            "tokens": [
+                50764,
+                1144,
+                321,
+                643,
+                257,
+                1036,
+                1500,
+                1310,
+                30,
+                1119,
+                300,
+                309,
+                30,
+                50914
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.29652829603715375,
+            "compression_ratio": 1.1204819277108433,
+            "no_speech_prob": 0.012907949276268482
+        }
+    ],
+    "language": "en"
+}
