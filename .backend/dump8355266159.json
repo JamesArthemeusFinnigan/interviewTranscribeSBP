@@ -1,1 +1,0 @@
-{"text": " Yes, it is indeed.", "segments": [{"id": 0, "seek": 0, "start": 0.0, "end": 4.0, "text": " Yes, it is indeed.", "tokens": [50364, 1079, 11, 309, 307, 6451, 13, 50564], "temperature": 0.0, "avg_logprob": -0.42694608370463055, "compression_ratio": 0.6923076923076923, "no_speech_prob": 0.03582523390650749}], "language": "en"}
