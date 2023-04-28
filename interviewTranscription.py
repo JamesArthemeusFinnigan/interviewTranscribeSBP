@@ -86,6 +86,8 @@ match nameChoice:
     case "y":
         textnameAdd = input("Please enter the name you would like to use: ")
         textname = "Output/" + textnameAdd + ".txt"
+parsingOptions = input(
+    "Would you like to segment the output for chatGPT? (y/n): ")
 print("***********IMPORTANT***********")
 # ******READING FROM FILE******
 
@@ -106,16 +108,46 @@ os.remove(textname)
 #         print(segment['end'])
 #         print(data['segments'][i+1]['start'])
 
+match parsingOptions:
+    case "n":
 
-for segment in data['segments']:
-    if segment["text"][-1] == "." or segment["text"][-1] == "?" or segment["text"][-1] == "!":
-        toBeAdded += segment['text']
-        with open(textname, "a") as fp:
-            fp.write(toBeAdded)
-            fp.write('\n')
-        toBeAdded = ''
-    else:
-        toBeAdded += segment['text']
+        for segment in data['segments']:
+            if segment["text"][-1] == "." or segment["text"][-1] == "?" or segment["text"][-1] == "!":
+                toBeAdded += segment['text']
+                with open(textname, "a") as fp:
+                    fp.write(toBeAdded)
+                    fp.write('\n')
+                toBeAdded = ''
+            else:
+                toBeAdded += segment['text']
+
+    case "y":
+        ln1 = "\n\n"
+        ln2 = "*******************************"
+        ln3 = "NEXT SEGMENT FOR GPT"
+        ln4 = "*******************************"
+        ln5 = "\n\n"
+        charCount = 0
+        for segment in data['segments']:
+            charCount += len(segment['text'])
+            if segment["text"][-1] == "." or segment["text"][-1] == "?" or segment["text"][-1] == "!":
+                toBeAdded += segment['text']
+                with open(textname, "a") as fp:
+                    fp.write(toBeAdded)
+                    fp.write('\n')
+                toBeAdded = ''
+                if charCount > 3000:
+                    with open(textname, "a") as fp:
+                        fp.write(ln1)
+                        fp.write(ln2)
+                        fp.write(ln3)
+                        fp.write(ln4)
+                        fp.write(ln5)
+                    charCount = 0
+            else:
+                charCount += len(segment['text'])
+                toBeAdded += segment['text']
+
 
 end = dt.now()
 
