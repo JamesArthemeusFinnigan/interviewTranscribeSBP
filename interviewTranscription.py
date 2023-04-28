@@ -51,12 +51,20 @@ print("*************************************")
 print("Whisper is now transcribing your file")
 print("*************IMPORTANT*************")
 print("Please do not close the program until the transcription is complete")
+modelChoice = input("Which model would you like to use? (medium/large): ")
+match modelChoice:
+    case "medium":
+        model = whisper.load_model('medium')
+    case "large":
+        model = whisper.load_model('large')
+    case ohter:
+        "Please enter a valid model and relaunch the program"
+        exit()
 verbosity = input(
     "Would you like to see the transcription as it is happening? (y/n): ")
 print("*************IMPORTANT*************")
 print("*************************************")
 
-model = whisper.load_model('medium')
 match verbosity:
     case "y":
         result = model.transcribe(usingFile, verbose=True)
