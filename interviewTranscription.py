@@ -79,6 +79,14 @@ print("")
 print("*************************************")
 print("Whisper has finished transcribing your file. The Raw file is saved in the .backend folder")
 print("*************************************")
+print("")
+print("***********IMPORTANT***********")
+nameChoice = input("Would you like to set a name for the final file? (y/n): ")
+match nameChoice:
+    case "y":
+        textnameAdd = input("Please enter the name you would like to use: ")
+        textname = "Output/" + textnameAdd + ".txt"
+print("***********IMPORTANT***********")
 # ******READING FROM FILE******
 
 with open(jsonname, "r") as fp:
@@ -90,6 +98,7 @@ with open(textname, "w") as fp:
 i = 0
 toBeAdded = ''
 os.remove(textname)
+
 
 # for segment in data['segments']:
 #     continuing = True
