@@ -74,7 +74,8 @@ def main():
             exit()
     timestamps = input(
         "How many seconds apart should timestamps be set? (Please enter time in SECONDS): ")
-    fileName = input("What would you like to name the file? (Please do not include file extension): ")
+    fileName = input(
+        "What would you like to name the file? (Please do not include file extension): ")
     result = whisper.transcribe(model, audio)
     with open(jsonname, "w") as fp:
         json.dump(result, fp)
@@ -92,7 +93,8 @@ def main():
                 hours = int(nextTS // 3600)
                 minutes = int((nextTS % 3600) // 60)
                 seconds = int(nextTS % 60)
-                TS_Formatted = "[{:0>2}:{:0>2}:{:0>2}]".format(hours, minutes, seconds)
+                TS_Formatted = "[{:0>2}:{:0>2}:{:0>2}]".format(
+                    hours, minutes, seconds)
                 textString += " "
                 textString += TS_Formatted
                 textString += " "
@@ -110,13 +112,8 @@ def main():
                 textString += " "
                 textString += word["text"]
             i += 1
-            print(textString)
     with open(fileName, "w") as text_file:
         text_file.write(textString)
-
-                    
-
-        
 
 
 if __name__ == "__main__":
