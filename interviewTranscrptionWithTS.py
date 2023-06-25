@@ -76,6 +76,7 @@ def main():
         "How many seconds apart should timestamps be set? (Please enter time in SECONDS): ")
     fileName = input(
         "What would you like to name the file? (Please do not include file extension): ")
+    fileName = "Output/" + fileName + ".txt"
     result = whisper.transcribe(model, audio)
     with open(jsonname, "w") as fp:
         json.dump(result, fp)
